@@ -1,0 +1,83 @@
+.quiz-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: inherit;
+    overflow: auto;
+}
+.quiz-panel{
+    text-align: left;
+    color: #293264;
+    padding: 10px;
+}
+.question{
+    padding: 5px;
+}
+.question-part{
+    width: fit-content;
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.choice-container{
+    width: fit-content;
+    display: grid;
+    gap: 15px;
+    text-align: center;
+}
+.choice{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    padding: 5px 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+}
+.question-divider{
+    border: 0.794239px solid #DBDEF0;
+    margin-bottom: 20px;
+}
+.submit-button, .play-again-button{
+    background: #4D5B9E;
+    border-radius: 15px;
+    border: none;
+    width: 160px;
+    height: 50px;
+    color: #F5F7FB;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+}
+.submit-button:active, .play-again-button:active{
+    background: hsl(229.63, 35%, 25%);
+}
+.submit-button:hover, .play-again-button:hover{
+    background-color: hsl(229.63, 35%, 35%);
+}
+.end-game-control{
+    width: 100%;
+    text-align: center;
+}
+.game-result{
+    height: 50px;
+    margin-right: 20px;
+    padding: 10px;
+    color: #293264;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    font-size: 18px;
+    vertical-align: middle;
+}

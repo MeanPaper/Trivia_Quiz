@@ -9,15 +9,28 @@ function App() {
   
   //game start flag
   const [startQuiz, setStartQuiz] = React.useState(false);
+  const [numberOfQuestion, setNumberOfQuestion] = React.useState(5);
 
   function clickToStart(){
     setStartQuiz(prev => !prev);
+  }
+  
+  function adjustQuestionNum(value){
+    if(numberOfQuestion + value >= 5){
+      setNumberOfQuestion(oldNum => oldNum + value);
+    }
   }
 
   return (
     <div className="App">
       <img className = 'bottom_blob' src = {blobLeft} alt = 'blob'/>
-      {!startQuiz ? <Homepage handleClick = {clickToStart}/> : <Quiz />}
+      {!startQuiz ? 
+        <div>
+          <Homepage handleClick = {clickToStart} 
+            numberOfQuestion = {numberOfQuestion}
+            adjustQuestionNum = {adjustQuestionNum}/>   
+        </div> 
+        : <Quiz number = {numberOfQuestion}/>}
       <img className = 'top_blob' src = {blobRight} alt = 'blob'/>
     </div>
   )

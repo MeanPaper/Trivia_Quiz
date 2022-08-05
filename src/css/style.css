@@ -81,3 +81,37 @@ body{
 .start-button:active{
     background-color: hsl(230, 34%, 26%);
 }
+.circle-toggle{
+
+    color: #F5F7FB;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+
+    border-radius: 50%;
+    border: none;
+    width: 45px;
+    height: 45px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: #4D5B9E;
+}
+
+.circle-toggle:hover{
+    background: hsl(230, 34%, 36%);
+}
+
+.circle-toggle:active{
+    background: hsl(230, 34%, 16%);
+}
+
+.question-number{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    width: fit-content;
+}

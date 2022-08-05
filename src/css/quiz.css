@@ -59,12 +59,15 @@
     font-weight: 600;
     font-size: 16px;
 }
-.submit-button:active, .play-again-button:active{
-    background: hsl(229.63, 35%, 25%);
-}
+
 .submit-button:hover, .play-again-button:hover{
     background-color: hsl(229.63, 35%, 35%);
 }
+
+.submit-button:active, .play-again-button:active{
+    background: hsl(229.63, 35%, 25%);
+}
+
 .end-game-control{
     width: 100%;
     text-align: center;

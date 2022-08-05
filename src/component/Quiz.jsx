@@ -4,7 +4,7 @@ import {nanoid} from 'nanoid'
 import ChoiceSet from './ChoiceSet'
 import "../css/quiz.css"
 
-function Quiz(){
+function Quiz({number}){
 
     const [quizData, setQuizData] = React.useState([]); 
     const [questionData, setQuestionData] = React.useState([]);
@@ -12,7 +12,7 @@ function Quiz(){
     
     // fetch questions 
     React.useEffect(()=>{
-        fetch('https://opentdb.com/api.php?amount=5')
+        fetch(`https://opentdb.com/api.php?amount=${number}`)
             .then(response => response.json())
             .then(value => setQuizData(value.results));
     },[]);
@@ -71,6 +71,7 @@ function Quiz(){
     function answerCheck(){
         setEndQuiz(true);
     }
+    
     function playAgain(){
         setEndQuiz(false);
         fetch('https://opentdb.com/api.php?amount=5')

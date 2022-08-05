@@ -7,12 +7,13 @@ import blobRight from './img/blob_right.png'
 
 function App() {
   
+  //game start flag
   const [startQuiz, setStartQuiz] = React.useState(false);
 
   function clickToStart(){
     setStartQuiz(prev => !prev);
   }
-  
+
   return (
     <div className="App">
       <img className = 'bottom_blob' src = {blobLeft} alt = 'blob'/>

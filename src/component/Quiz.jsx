@@ -1,12 +1,11 @@
 import React from 'react'
-import "../css/quiz.css"
 import he from 'he' //an awesome lib that can change html entities (code) to a string
 import {nanoid} from 'nanoid'
 import ChoiceSet from './ChoiceSet'
-// import PropTypes from 'prop-types'
-
+import "../css/quiz.css"
 
 function Quiz(){
+
     const [quizData, setQuizData] = React.useState([]); 
     const [questionData, setQuestionData] = React.useState([]);
     const [endQuiz, setEndQuiz] = React.useState(false);
@@ -17,8 +16,9 @@ function Quiz(){
             .then(response => response.json())
             .then(value => setQuizData(value.results));
     },[]);
+
+    // make the data easier to use
     React.useEffect(()=>{
-       //console.log(quizData);
         setQuestionData(quizData.map(d => {
             let q = he.decode(d.question);
             let a = he.decode(d.correct_answer);
@@ -28,8 +28,8 @@ function Quiz(){
             return {questionID: ID, question: q, correct: a, choiceSet: choices}    //the id here is the unique id for each question
         }));
     },[quizData]);
-      
-    // const gridStyle = {gridTemplate: `auto auto / repeat(${}, auto)`};
+    
+    // create choices elements
     const allQuestions = questionData.map(qd => {
         return (<div className = 'question' key = {nanoid()}>
             <div className='question-part'>{qd.question}</div>

@@ -12,9 +12,6 @@ function ChoiceSet ({choiceSet, setQuestionData, questionID, endQuiz, correctAns
     // 3. only change the choice if step 2 is equal
     // 4. go to the choice set to find the choice that needs to be changed
     function selectChoice(choiceName){
-        
-        // console.log(`select ${choiceName}`)
-
         if (!endQuiz){ //unlock selection when quiz is still on
             setQuestionData(oldData => oldData.map(old => {
                 return (old.questionID == questionID) 
@@ -38,6 +35,7 @@ function ChoiceSet ({choiceSet, setQuestionData, questionID, endQuiz, correctAns
             rightChoice = {ans.choice == correctAns}
         />
     );
+    
     // return a set of choices
     return (<div className = 'choice-container' style = {gridStyle}>
         {allChoices}

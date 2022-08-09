@@ -74,7 +74,7 @@ function Quiz({number}){
     
     function playAgain(){
         setEndQuiz(false);
-        fetch('https://opentdb.com/api.php?amount=5')
+        fetch(`https://opentdb.com/api.php?amount=${number}`)
             .then(response => response.json())
             .then(value => setQuizData(value.results));
     }

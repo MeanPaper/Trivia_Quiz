@@ -16,7 +16,7 @@ function App() {
   }
   
   function adjustQuestionNum(value){
-    if(numberOfQuestion + value >= 5){
+    if(numberOfQuestion + value >= 5 && numberOfQuestion + value <= 250){
       setNumberOfQuestion(oldNum => oldNum + value);
     }
   }

@@ -64,7 +64,6 @@ body{
     font-size: 16px;
     line-height: 19px;
 
-    
     border-radius: 15px;
     width: 200px;
     height: 50px;
@@ -82,7 +81,6 @@ body{
     background-color: hsl(230, 34%, 26%);
 }
 .circle-toggle{
-
     color: #F5F7FB;
     font-family: 'Inter';
     font-style: normal;
@@ -93,8 +91,8 @@ body{
     border: none;
     width: 45px;
     height: 45px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
     background: #4D5B9E;
@@ -113,8 +111,11 @@ body{
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
+
     margin: 5px;
-    width: 200px;
+    display: inline-block;
+    width: 75px;
+    text-align: center;
 }
 
 .question-number-control{
@@ -123,12 +124,30 @@ body{
 
 .fixed-adjustment{
     display: block;
-    width: 50px;
-    height: 30px;
+    width: 70px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    background: #4D5B9E;
+    
+    color: #F5F7FB;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;    
 }
+
+.fixed-adjustment:hover{
+    background: hsl(230, 34%, 36%);        
+}
+
+.fixed-adjustment:active{
+    background: hsl(230, 34%, 16%);
+}
+
 .fixed-number-adjustment{
     margin: 20px;
     display: grid;
     grid-template: auto auto / repeat(3, auto);
-    gap: 15px;
+    gap: 18px;
 }

@@ -19,6 +19,12 @@ function App() {
     if(numberOfQuestion + value >= 5 && numberOfQuestion + value <= 250){
       setNumberOfQuestion(oldNum => oldNum + value);
     }
+    else if(numberOfQuestion + value < 5){
+      setNumberOfQuestion(Math.max(5, numberOfQuestion + value));
+    }
+    else if(numberOfQuestion + value > 250){
+      setNumberOfQuestion(Math.min(250, numberOfQuestion + value));
+    }
   }
 
   return (

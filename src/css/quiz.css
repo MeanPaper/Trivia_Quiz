@@ -3,14 +3,17 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 720px;
     min-height: 100vh;
     min-width: inherit;
-    overflow: auto;
+    overflow: hidden;
+    margin: 10px;
 }
 .quiz-panel{
     text-align: left;
     color: #293264;
     padding: 10px;
+    width: inherit;
 }
 .question{
     padding: 5px;
@@ -20,9 +23,9 @@
     font-family: 'Karla';
     font-style: normal;
     font-weight: 700;
-    font-size: 22px;
-    margin-bottom: 20px;
-    margin-top: 10px;
+    font-size: 20px;
+    margin-bottom: 18px;
+    margin-top: 8px;
 }
 .choice-container{
     width: fit-content;
@@ -42,11 +45,11 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 15px;
 }
 .question-divider{
     border: 0.794239px solid #DBDEF0;
-    margin-bottom: 20px;
+    margin-bottom: 13px;
 }
 .submit-button, .play-again-button{
     background: #4D5B9E;
@@ -59,7 +62,8 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 15px;
+    margin: 5px;
 }
 
 .submit-button:hover, .play-again-button:hover{
@@ -71,6 +75,7 @@
 }
 
 .end-game-control{
+    margin: 5px;
     width: 100%;
     text-align: center;
 }

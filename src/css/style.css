@@ -11,7 +11,7 @@ body{
 .App{
     padding: 0px;
     position: relative;
-    min-width: 600px;
+    min-width: 720px;
     min-height: 100vh;
     display: flex;
     justify-content: space-between;
@@ -29,7 +29,7 @@ body{
 
 .homepage{
     display: block;
-    width: 700px;
+    width: 800px;
     height: 100vh;
 
     display: flex;
@@ -37,6 +37,7 @@ body{
     align-items: center;
     justify-content: center;
 }
+
 .homepage-title{
     font-weight: 700;
     line-height: 37px;

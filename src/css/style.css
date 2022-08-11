@@ -11,7 +11,7 @@ body{
 .App{
     padding: 0px;
     position: relative;
-    min-width: 730px;
+    min-width: 750px;
     min-height: 100vh;
     display: flex;
     justify-content: space-between;

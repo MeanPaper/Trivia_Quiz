@@ -3,7 +3,7 @@ import he from 'he' //an awesome lib that can change html entities (code) to a s
 import {nanoid} from 'nanoid'
 import ChoiceSet from './ChoiceSet'
 
-function Quiz({number, loading, setLoading}){
+function Quiz({number, loading, setLoading,setStartQuiz}){
     const [quizData, setQuizData] = React.useState([]); 
     const [questionData, setQuestionData] = React.useState([]);
     const [endQuiz, setEndQuiz] = React.useState(false);
@@ -106,6 +106,10 @@ function Quiz({number, loading, setLoading}){
             return Promise.reject();
         });
     }
+    
+    function backToHome(){
+        setStartQuiz(false);
+    }
 
     return (
         <div className = 'quiz-page'>
@@ -116,8 +120,12 @@ function Quiz({number, loading, setLoading}){
                     </div>
                     <div className = 'end-game-control'>
                         {endQuiz && <span className = 'game-result'>{`You Score ${score()}/${questionData.length} correct answers`}</span>}
-                        {(!loading) && (endQuiz ? <button className = 'play-again-button' onClick = {()=>playAgain()}>Play Again</button>
-                        :<button className = 'submit-button' onClick = {()=>answerCheck()}>Check Answers</button>)}
+                        {(!loading) && 
+                            (endQuiz ? <span>
+                                <button className = 'play-again-button' onClick = {()=>playAgain()}>Play Again</button>
+                                <button className = 'home-button' onClick = {()=>backToHome()}> Home </button>
+                            </span> : <button className = 'submit-button' onClick = {()=>answerCheck()}>Check Answers</button>)
+                        }
                     </div>
                 </div>
             }

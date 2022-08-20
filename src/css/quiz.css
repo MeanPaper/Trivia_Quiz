@@ -6,7 +6,7 @@
     background-color: #4D5B9E;
     color: #4D5B9E;
     animation: loadingDot 0.75s infinite linear alternate;
-    animation-delay: .25s;
+    animation-delay: 0.25s;
 }
   
 .loading-dot::before, .loading-dot::after{
@@ -93,7 +93,7 @@
     border: 0.794239px solid #DBDEF0;
     margin-bottom: 13px;
 }
-.submit-button, .play-again-button{
+.submit-button, .play-again-button, .home-button{
     background: #4D5B9E;
     border-radius: 15px;
     border: none;
@@ -108,11 +108,11 @@
     margin: 5px;
 }
 
-.submit-button:hover, .play-again-button:hover{
+.submit-button:hover, .play-again-button:hover, .home-button:hover{
     background-color: hsl(229.63, 35%, 35%);
 }
 
-.submit-button:active, .play-again-button:active{
+.submit-button:active, .play-again-button:active, .home-button:active{
     background: hsl(229.63, 35%, 25%);
 }
 

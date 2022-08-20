@@ -13,7 +13,7 @@ function App() {
   const [loading, setLoading] = React.useState(false);
 
   function clickToStart(){
-    setStartQuiz(prev => !prev);
+    setStartQuiz(true);
   }
   
   function adjustQuestionNum(value){
@@ -32,7 +32,7 @@ function App() {
     <div className = "App">
       <img className = 'bottom_blob' src = {blobLeft} alt = 'blob'/>
       {!startQuiz ? <Homepage handleClick = {clickToStart} numberOfQuestion = {numberOfQuestion} adjustQuestionNum = {adjustQuestionNum}/>
-        : <Quiz number = {numberOfQuestion} loading = {loading} setLoading = {setLoading}/>}
+        : <Quiz number = {numberOfQuestion} loading = {loading} setLoading = {setLoading} setStartQuiz = {setStartQuiz}/>}
       <img className = 'top_blob' src = {blobRight} alt = 'blob'/>
     </div>
   )

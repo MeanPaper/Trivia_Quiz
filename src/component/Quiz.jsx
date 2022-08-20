@@ -2,16 +2,15 @@ import React from 'react'
 import he from 'he' //an awesome lib that can change html entities (code) to a string
 import {nanoid} from 'nanoid'
 import ChoiceSet from './ChoiceSet'
-import "../css/quiz.css"
 
-function Quiz({number}){
-
+function Quiz({number, loading, setLoading}){
     const [quizData, setQuizData] = React.useState([]); 
     const [questionData, setQuestionData] = React.useState([]);
     const [endQuiz, setEndQuiz] = React.useState(false);
     
     // fetch questions 
     React.useEffect(()=>{
+        setLoading(true);
         fetch(`https://opentdb.com/api.php?amount=${number}`)
             .then(response => {
                 if (response.ok){
@@ -21,7 +20,10 @@ function Quiz({number}){
                     throw new Error('Cannot fetch the data');
                 }
             })
-            .then(value => setQuizData(value.results))
+            .then(value => {
+                setQuizData(value.results)
+                setTimeout(() => {setLoading(false)}, 2000);
+            })
             .catch(error => {
                 console.log(error);
                 return Promise.reject();
@@ -73,7 +75,7 @@ function Quiz({number}){
     
     // initialized all the choice data
     function initialChoice(data){
-        return {
+        return{
             choice: data,
             isHeld: false
         };
@@ -85,20 +87,40 @@ function Quiz({number}){
     
     function playAgain(){
         setEndQuiz(false);
+        setLoading(true);
         fetch(`https://opentdb.com/api.php?amount=${number}`)
-            .then(response => response.json())
-            .then(value => setQuizData(value.results));
+        .then(response => {
+            if (response.ok){
+                return response.json();
+            }
+            else{
+                throw new Error('Cannot fetch the data');
+            }
+        })
+        .then(value => {
+            setQuizData(value.results);
+            setTimeout(()=>{setLoading(false)},2000);
+        })
+        .catch(error => {
+            console.log(error);
+            return Promise.reject();
+        });
     }
+
     return (
-        <div className = 'quiz-content'>
-            <div className = 'quiz-panel'>
-                {allQuestions}
-            </div>
-            <div className = 'end-game-control'>
-                {endQuiz && <span className = 'game-result'>{`You Score ${score()}/${questionData.length} correct answers`}</span>}
-                {endQuiz ? <button className = 'play-again-button' onClick={()=>playAgain()}>Play Again</button>
-                :<button className = 'submit-button' onClick={()=>answerCheck()}>Check Answers</button>}
-            </div>
+        <div className = 'quiz-page'>
+            {loading ? <div className = 'loading-dot'/>:
+                <div className = 'quiz-content'>
+                    <div className = 'quiz-panel'>
+                        {(!loading) && allQuestions}
+                    </div>
+                    <div className = 'end-game-control'>
+                        {endQuiz && <span className = 'game-result'>{`You Score ${score()}/${questionData.length} correct answers`}</span>}
+                        {(!loading) && (endQuiz ? <button className = 'play-again-button' onClick = {()=>playAgain()}>Play Again</button>
+                        :<button className = 'submit-button' onClick = {()=>answerCheck()}>Check Answers</button>)}
+                    </div>
+                </div>
+            }
         </div>
     );
 }

@@ -37,9 +37,11 @@ function ChoiceSet ({choiceSet, setQuestionData, questionID, endQuiz, correctAns
     );
     
     // return a set of choices
-    return (<div className = 'choice-container' style = {gridStyle}>
-        {allChoices}
-    </div>);
+    return(
+        <div className = 'choice-container' style = {gridStyle}>
+            {allChoices}
+        </div>
+    );
 }
 
 export default ChoiceSet;

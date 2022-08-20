@@ -1,3 +1,45 @@
+.loading-dot{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #4D5B9E;
+    color: #4D5B9E;
+    animation: loadingDot 0.75s infinite linear alternate;
+    animation-delay: .25s;
+}
+  
+.loading-dot::before, .loading-dot::after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #4D5B9E;
+    color: #4D5B9E;
+    animation: loadingDot 0.75s infinite alternate;
+}
+  
+.loading-dot::before{
+    left: -30px;
+    animation-delay: 0s;
+}
+  
+.loading-dot::after {
+    left: 30px;
+    animation-delay: 0.5s;
+}
+  
+@keyframes loadingDot {
+    0% {
+      background-color: #4d5b9e;
+    }
+    50%, 100% {
+      background-color: #e8e8e8;
+    }
+}
+  
 .quiz-content{
     display: flex;
     align-items: center;

@@ -10,33 +10,29 @@ function App() {
   //game start flag
   const [startQuiz, setStartQuiz] = React.useState(false);
   const [numberOfQuestion, setNumberOfQuestion] = React.useState(5);
+  const [loading, setLoading] = React.useState(false);
 
   function clickToStart(){
     setStartQuiz(prev => !prev);
   }
   
   function adjustQuestionNum(value){
-    if(numberOfQuestion + value >= 5 && numberOfQuestion + value <= 250){
+    if(numberOfQuestion + value >= 5 && numberOfQuestion + value <= 50){
       setNumberOfQuestion(oldNum => oldNum + value);
     }
     else if(numberOfQuestion + value < 5){
       setNumberOfQuestion(Math.max(5, numberOfQuestion + value));
     }
-    else if(numberOfQuestion + value > 250){
-      setNumberOfQuestion(Math.min(250, numberOfQuestion + value));
+    else if(numberOfQuestion + value > 50){
+      setNumberOfQuestion(Math.min(50, numberOfQuestion + value));
     }
   }
 
   return (
-    <div className="App">
+    <div className = "App">
       <img className = 'bottom_blob' src = {blobLeft} alt = 'blob'/>
-      {!startQuiz ? 
-        <div>
-          <Homepage handleClick = {clickToStart} 
-            numberOfQuestion = {numberOfQuestion}
-            adjustQuestionNum = {adjustQuestionNum}/>   
-        </div> 
-        : <Quiz number = {numberOfQuestion}/>}
+      {!startQuiz ? <Homepage handleClick = {clickToStart} numberOfQuestion = {numberOfQuestion} adjustQuestionNum = {adjustQuestionNum}/>
+        : <Quiz number = {numberOfQuestion} loading = {loading} setLoading = {setLoading}/>}
       <img className = 'top_blob' src = {blobRight} alt = 'blob'/>
     </div>
   )

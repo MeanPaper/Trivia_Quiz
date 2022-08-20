@@ -8,7 +8,7 @@ const Homepage = (props) => {
     const baseNum = pos ? 10 : -10;
     for(let i = 1; i <= num; ++i){
       buttons.push(
-        <button className = 'fixed-adjustment' onClick = {() => props.adjustQuestionNum(baseNum*i)}>
+        <button className = 'fixed-adjustment' onClick = {()=>props.adjustQuestionNum(baseNum*i)}>
           {pos ? `+${baseNum*i}` : baseNum*i}
         </button>
       )

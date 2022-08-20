@@ -13,8 +13,19 @@ function Quiz({number}){
     // fetch questions 
     React.useEffect(()=>{
         fetch(`https://opentdb.com/api.php?amount=${number}`)
-            .then(response => response.json())
-            .then(value => setQuizData(value.results));
+            .then(response => {
+                if (response.ok){
+                    return response.json();
+                }
+                else{
+                    throw new Error('Cannot fetch the data');
+                }
+            })
+            .then(value => setQuizData(value.results))
+            .catch(error => {
+                console.log(error);
+                return Promise.reject();
+            });
     },[]);
 
     // make the data easier to use

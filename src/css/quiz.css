@@ -61,7 +61,10 @@
     padding: 5px;
 }
 .question-part{
-    width: fit-content;
+    width: intrinsic;
+    width: -moz-max-content; 
+    width: -webkit-max-content;
+    width: max-content;
     font-family: 'Karla';
     font-style: normal;
     font-weight: 700;
@@ -70,7 +73,10 @@
     margin-top: 8px;
 }
 .choice-container{
-    width: fit-content;
+    width: intrinsic;
+    width: -moz-max-content; 
+    width: -webkit-max-content;
+    width: max-content;
     display: grid;
     gap: 15px;
     text-align: center;

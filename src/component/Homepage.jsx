@@ -20,6 +20,7 @@ const Homepage = (props) => {
       <div className = 'homepage'>
         <h1 className = 'homepage-title'>Quizzical</h1>
         <p className = 'homepage-description'>Welcome To The Ultimate Trivia Quiz</p>
+        <div className = 'question-number-title'> Number of Questions</div>
         <div className = 'question-number-control'>
           <button className = 'circle-toggle' onClick = {() => props.adjustQuestionNum(-1)}> - </button>
           <span className = 'question-number'>{props.numberOfQuestion}</span>

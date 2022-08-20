@@ -64,7 +64,7 @@
     width: intrinsic;
     width: -moz-max-content; 
     width: -webkit-max-content;
-    width: max-content;
+    width: fit-content;
     font-family: 'Karla';
     font-style: normal;
     font-weight: 700;
@@ -76,7 +76,7 @@
     width: intrinsic;
     width: -moz-max-content; 
     width: -webkit-max-content;
-    width: max-content;
+    width: fit-content;
     display: grid;
     gap: 15px;
     text-align: center;

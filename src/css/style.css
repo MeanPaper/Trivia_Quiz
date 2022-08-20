@@ -45,7 +45,7 @@ body{
     width: intrinsic;
     width: -moz-max-content; 
     width: -webkit-max-content;
-    width: max-content;
+    width: fit-content;
 }
 
 .homepage-description{
@@ -58,7 +58,7 @@ body{
     width: intrinsic;
     width: -moz-max-content; 
     width: -webkit-max-content;
-    width: max-content;
+    width: fit-content;
 }
 
 .question-number-title{
